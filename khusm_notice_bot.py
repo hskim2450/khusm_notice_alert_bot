@@ -12,12 +12,6 @@ def board_newest_post(url, selector):
     title = posts.text.strip()
     return title
 
-def new_post_alert(url, selector, category, title_latest):
-    title = board_newest_post(url, selector)
-    if title != title_latest:
-        post_to_slack("의대게시판 새글: [" + category + "] " + title)
-    return title
-
 url_list = ['https://khusm.khu.ac.kr/bbs/board.php?bo_table=s6_1&sca=%ED%95%99%EC%82%AC',
             'https://khusm.khu.ac.kr/bbs/board.php?bo_table=s6_1&sca=%EC%9D%BC%EB%B0%98%EB%8C%80%ED%95%99%EC%9B%90',
             'https://khusm.khu.ac.kr/bbs/board.php?bo_table=s6_1&sca=%EC%9E%A5%ED%95%99',
